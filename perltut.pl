@@ -9,33 +9,15 @@ use feature "switch";
 
 use v5.26;
 
-for ( my $i = 0; $i < 10; $i++ ) {
-    say $i;
-}
 
 my $i = 1;
-while ( $i < 10 ) {
-    if ($i%2 == 0) {
 
-	$i++;
-
-	next;
+my $age_old = 17;
+given($age_old) {
+    when($_ > 16 ){
+	say "Drive" ;
+    continue ;
 }
-
-    if ($i == 7 ) {last; }
-    say $i;
-    $i++
-	
+when ($_ > 17 ) {say "Go Vote";}
+default { say "Nothing Special" ;}
 }
-
-# my $i = 1;
-my $lucky_num = 7;
-
-my $guess ;
-
-do {
-    say "Guess a Number Between 1 and 10";
-	$guess = <STDIN>;
-} while $guess != $lucky_num ;
-
-say "You Guessed 7";
