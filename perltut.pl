@@ -21,7 +21,14 @@ $long_string = $long_string . ' isn\'t that long' ;
 
 say "Index 7 through 10 " , substr $long_string,7,4;
 
+$long_string =~ s/ /,/g;
+say $long_string ;
+my $two_times = "What I said is " x 2;
 
-print("Uppercase: %s \n", uc $long_string);
-print("Lowercase: %s \n", lc $long_string);
-print("1st Uppercase: %s \n", ucfirst $long_string);
+say $two_times;
+
+my @abcs = ('a' .. 'z') ;
+print join(", ", @abcs, "\n");
+
+  my $letter = 'c';
+ say "Next Letter ", ++$letter;
