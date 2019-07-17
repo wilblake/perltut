@@ -9,17 +9,33 @@ use feature "switch";
 
 use v5.26;
 
-my $age = 80;
-my $is_not_intoxicated = 1;
-my $age_last_exam  = 16;
-
-if ('a' eq 'b' ){
-    say "a equals b" ;
-} else {
-    say " a doesn't equal b" ;
+for ( my $i = 0; $i < 10; $i++ ) {
+    say $i;
 }
 
-unless (!$is_not_intoxicated) {
-    say "Get Sober" ;
+my $i = 1;
+while ( $i < 10 ) {
+    if ($i%2 == 0) {
+
+	$i++;
+
+	next;
 }
-say (( $age>18 ) ? "Can Vote" : "Can't Vote" );
+
+    if ($i == 7 ) {last; }
+    say $i;
+    $i++
+	
+}
+
+# my $i = 1;
+my $lucky_num = 7;
+
+my $guess ;
+
+do {
+    say "Guess a Number Between 1 and 10";
+	$guess = <STDIN>;
+} while $guess != $lucky_num ;
+
+say "You Guessed 7";
