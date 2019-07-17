@@ -9,14 +9,26 @@ use feature "switch";
 
 use v5.26;
 
-my $rand_num = 5;
-$rand_num += 1 ;
-say "Number Incremented ", $rand_num;
+my $age = 80;
+my $is_not_intoxicated = 1;
+my $age_last_exam  = 16;
 
-say "6++ = ", $rand_num++ ;
-say "++6 = ", ++$rand_num ;
-say "6-- = ", $rand_num--;
-say "--6 = ", --$rand_num ;
+if ($age<16) {
+    say "You can't drive" ;
+    
+} elsif (!$is_not_intoxicated) {
+    say "You can't drive" ;
+}
+else { say "You can drive" };
 
-say " 3 + 2 * 5 = " , 3 + 2 * 5;
-say " (3 + 2) * 5 = " , (3 + 2) * 5;
+if ( ($age >= 1) && ($age < 16) ) {
+    say "You can't drive" ;
+    
+} elsif (!$is_not_intoxicated) {
+    say "You can't drive" ;
+} elsif (  (($age>=80) && ($age > 100)) || ( ($age - $age_last_exam) > 5)) {
+    say "You can't drive" ;
+    
+} else {
+    say "You can Drive" ;
+}
