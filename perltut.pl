@@ -8,24 +8,20 @@ use feature 'say';
 use feature "switch";
 
 use v5.26;
+#OO
+use lib 'lib';
 
-my $emp_file ='employees.txt';
+use Animal::Cat;
 
-open my $fh, '<', $emp_file or die "Cant Open File: $_" ;
-while (my $info = <$fh> )
-  {
-    #delete newline
-    chomp($info);
-    my ($emp_name, $job, $id) = split /:/, $info;
-    print "$emp_name is a $job with id $id \n" ;
-    
-  }
-close $fh or die "Couldn't Close file: $_";
-open $fh, '>>', $emp_file or die "Cant open file : $_";
-print $fh "Matt:Salesman:125\n";
-close $fh or die "Couldn't Close file: $_";
+my $whiskers = new Animal::Cat("whiskers", "Wil");
 
-open $fh, '+<', $emp_file or die "Cant open file : $_";
-seek $fh,0,0;
-print $fh "Bill:Salesman:126\n";
-close $fh or die "Couldn't Close file: $_";
+say $whiskers->getName();
+$whiskers->setName("Starry");
+say $whiskers->getSound();
+
+use Animal::Lion;
+
+my $king = new Animal::Lion("King", "No Owner");
+
+say $king->getName();
+say $king->getSound();
